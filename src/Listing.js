@@ -9,9 +9,9 @@ class Listing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productData: [],
+      productData: [], // to store all the products data
       activeState: [],
-      visible: 12,
+      visible: 12, // cards to be visible to user
       errorMessage: false
     };
     this.inputField = React.createRef();
@@ -26,11 +26,8 @@ class Listing extends Component {
   }
 
   componentDidMount() {
-    const { productData } = this.state;
+    const apiUrl = "http://localhost:8000/products"; //API Call
 
-    const apiUrl = "http://localhost:8000/products";
-    if (!productData.length) {
-    }
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => this.setState({ productData: data, activeState: data }))
@@ -50,6 +47,7 @@ class Listing extends Component {
       }
     }
     if (searchProducts.length === 0) {
+      // Either user searches wrong word or user searches nothing
       if (inputData !== "") {
         this.setState({ errorMessage: true });
       }

@@ -9,6 +9,7 @@ const ProductWrapper = props => {
       <div className={productCardWrapper}>
         {data &&
           data.slice(0, visible).map(ele => {
+            // for displaying cards
             return (
               <div key={ele.id}>
                 <ProductCard

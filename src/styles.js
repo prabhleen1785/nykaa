@@ -97,7 +97,6 @@ export const loadMoreClass = css`
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
-  font-family: $sans;
   cursor: pointer;
   border: outline;
   @media only screen and (max-width: 600px) {
